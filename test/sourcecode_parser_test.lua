@@ -1,10 +1,10 @@
 local luaunit = require('luaunit')
 
-require('sourcecode_parser')
+require('lua/sourcecode_parser')
 
 function Test_should_pars_commands_into_doc_tree()
 
-  local doctree = ParseFile('./t/example_with_doc.vim')
+  local doctree = ParseFile('./test/res/example_with_doc.vim')
 
   luaunit.assertEquals(#doctree, 2)
   luaunit.assertEquals(doctree[1].identifiers[1], ':Command {args}')
@@ -19,7 +19,7 @@ end
 
 function Test_should_respect_complicated_text_formatting()
 
-  local doctree = ParseFile('./t/example_with_complex_doc.vim')
+  local doctree = ParseFile('./test/res/example_with_complex_doc.vim')
 
   luaunit.assertEquals(#doctree, 1)
   luaunit.assertEquals(doctree[1].identifiers[1], ':Searchalot {searches}')
@@ -30,7 +30,7 @@ end
 
 function Test_should_support_variables()
 
-  local doctree = ParseFile('./t/example_with_globals_and_functions.vim')
+  local doctree = ParseFile('./test/res/example_with_globals_and_functions.vim')
 
   luaunit.assertEquals(#doctree, 2)
   luaunit.assertEquals(doctree[1].identifiers[1], 'g:global_var')

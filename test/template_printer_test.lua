@@ -1,6 +1,6 @@
 local luaunit = require('luaunit')
 
-require('template_printer')
+require('lua/template_printer')
 
 function Test_should_pars_commands_into_doc_tree2()
   local keysWithLines = {
@@ -15,7 +15,7 @@ function Test_should_pars_commands_into_doc_tree2()
   }
 
   local outFile = os.tmpname()
-  ApplyTemplate("./t/template.txt", outFile, keysWithLines)
+  ApplyTemplate("./test/res/template.txt", outFile, keysWithLines)
 
   local outputFileText = io.open(outFile):read("*a")
   luaunit.assertEquals(outputFileText, [[First:

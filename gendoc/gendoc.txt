@@ -1,0 +1,25 @@
+gendoc.txt    Simplify doc writing with templating and generation
+
+Author:  Leon Schreuder <https://github.com/leonschreuder>
+License: MIT
+
+1. Introduction             |gendoc-description|
+
+==============================================================================
+DESCRIPTION                                                 *gendoc-description*
+
+Writing vim plugins is a lot of work. Which is mostly fun work. Except for the
+documetation of course. And it's made worse by the fact that there is no such
+thing like generating api docs from sourcecode comments. Or that you have to
+write a README.md for github, but also a separate incompattible helpfile for
+inside vim.
+
+This plugin intends to change this by allowing you to write API documentation
+right in vimscript where you define the public commands and functions etc, and
+then use templating to inject it in a helpfile. Or allow you to use templating
+to write once, and inject in multiple sources.
+
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:

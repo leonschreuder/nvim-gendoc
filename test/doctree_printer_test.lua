@@ -1,6 +1,6 @@
 local luaunit = require('luaunit')
 
-require('doctree_printer')
+require('lua/doctree_printer')
 
 function Test_should_convert_doctree_to_lines()
   local doctree = {
